@@ -41,11 +41,6 @@ function kandinsky(canvas, title) {
       ctx.fill();
     }
   }
-  
-  // Add title
-  ctx.fillStyle = "#000000";
-  ctx.font = "30px Arial";
-  ctx.fillText(title, 20, canvas.height - 30);
 }
 
 function hexToRgb(hex) {
