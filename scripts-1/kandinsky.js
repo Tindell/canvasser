@@ -1,10 +1,6 @@
 function kandinsky(canvas, title) {
   const ctx = canvas.getContext("2d");
   
-  // Set canvas dimensions
-  canvas.width = 500;
-  canvas.height = 500;
-  
   // Define colors
   const colors = [    "#FF5733",    "#C70039",    "#900C3F",    "#581845",    "#FFC300",    "#DAF7A6",    "#FF5733",    "#C70039"  ];
   
