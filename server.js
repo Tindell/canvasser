@@ -56,7 +56,7 @@ function updateRepo(req, res) {
 
   if (event === 'push' && ref === 'refs/heads/main') {
     // Update the repository and restart the server
-    exec('git pull && npm install && pm2 restart your-app-name', (error, stdout, stderr) => {
+    exec('git pull && npm install && pm2 restart canvasser', (error, stdout, stderr) => {
       if (error) {
         console.error(`exec error: ${error}`);
         return;
