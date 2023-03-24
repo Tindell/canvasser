@@ -1,8 +1,8 @@
 function mountain(canvas, title) {
   const ctx = canvas.getContext("2d");
   // Set up canvas and title
-  canvas.width = 800;
-  canvas.height = 600;
+  canvas.width = 400;
+  canvas.height = 300;
   ctx.font = "30px Arial";
   ctx.fillText(title, 10, 40);
 
