@@ -1,4 +1,5 @@
 function mountain(canvas, title) {
+  title.textContent = "I broke this one cause it was too big and I didn't want to regenrate it";
   const ctx = canvas.getContext("2d");
   // Set up canvas and title
   canvas.width = 400;
