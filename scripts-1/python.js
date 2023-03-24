@@ -33,10 +33,4 @@ function python(canvas, title) {
   ctx.lineTo(270, 80);
   ctx.fillStyle = "#FF4E50";
   ctx.fill();
-
-  // Draw title
-  ctx.font = "30px Arial";
-  ctx.fillStyle = "#000000";
-  ctx.textAlign = "center";
-  ctx.fillText(title, canvas.width/2, 50);
 }
