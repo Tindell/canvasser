@@ -18,7 +18,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Serve canvases from the first directory
 app.get('/load-canvases-1', (req, res) => {
-  console.log("hello");
   const scriptFolderPath = path.join(__dirname, 'scripts-1');
   readAndSendCanvasScripts(scriptFolderPath, res);
 });
