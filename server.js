@@ -2,15 +2,20 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 require('dotenv').config();
+const markdown = require('markdown-it')();
+
 
 const crypto = require('crypto');
 const exec = require('child_process').exec;
 
 const bodyParser = require('body-parser');
 const GITHUB_WEBHOOK_SECRET = process.env.GITHUB_WEBHOOK_SECRET || "";
+const articlesRouter = require('./routes/chats');
 
 
 const app = express();
+app.use('/chats', articlesRouter);
+
 const PORT = process.env.PORT || 3001;
 
 app.use(bodyParser.json());
@@ -90,6 +95,21 @@ function readAndSendCanvasScripts(scriptFolderPath, res) {
     res.json(canvasData);
   });
 }
+
+app.get('/articles/:filename', (req, res) => {
+  const filename = req.params.filename;
+  const filepath = `./articles/${filename}.md`;
+
+  fs.readFile(filepath, 'utf8', (err, content) => {
+    if (err) {
+      // Handle the error
+    } else {
+      const html = markdown.render(content);
+      res.send(html);
+    }
+  });
+});
+
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
