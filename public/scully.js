@@ -63,7 +63,27 @@ function scully_banner() {
     drawBackground();
     createScullyStripes();
     createScullyBlocks();
+// Add title
+ctx.font = "bold 64px Arial";
+ctx.textBaseline = "bottom";
+ctx.textAlign = "left";
+ctx.fillStyle = "white";
+ctx.strokeStyle = "black";
+ctx.lineWidth = 2;
 
+const title = "tdoggie.com"
+const padding = 10;
+const textX = padding;
+const textY = height - padding;
+
+// Add shadow effect
+ctx.shadowColor = "rgba(0, 0, 0, 0.975)";
+ctx.shadowBlur = 10;
+ctx.shadowOffsetX = 3;
+ctx.shadowOffsetY = 3;
+
+ctx.strokeText(title, textX, textY);
+ctx.fillText(title, textX, textY);
 }
 
 let resizeTimer;
